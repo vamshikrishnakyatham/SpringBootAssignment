@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Work Bench</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>WorkBench</h3>
+    <hr>
+
+    <!-- Add a button -->
+
+            <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/todolist/showFormForAdd}"
+               class="btn btn-primary btn-sm mb-3">
+                Add Item
+            </a>
+
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Update Status</th>
+            <th sec:authorize="hasRole('ROLE_ADMIN')">Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempItem : ${todolist}">
+
+            <td th:text="${tempItem.title}" />
+            <td th:text="${tempItem.done}" />
+
+            <td> <a th:href="@{/todolist/showFormForUpdateStatus(itemId=${tempItem.id})}"
+                    class="btn btn-info btn-sm">status Update</a>
+            </td>
+
+            <!-- Add update button/link -->
+            <td>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/todolist/showFormForUpdate(itemId=${tempItem.id})}"
+                   class="btn btn-info btn-sm">
+                    Update
+                </a>
+
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/todolist/delete(itemId=${tempItem.id})}"
+                   class="btn btn-danger btn-sm"
+                   onclick="if(!(confirm('Are you sure you want to delete this?'))) return false">
+                    Delete
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<a th:href="@{/login}"
+   class="btn btn-primary btn-sm mb-3">
+   Logout
+</a>
+
+</body>
+</html>
