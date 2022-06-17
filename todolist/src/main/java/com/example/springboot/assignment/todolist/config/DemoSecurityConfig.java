@@ -46,13 +46,10 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-
                 .defaultSuccessUrl("/todolist/list", true)
-
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-
                 .and()
                 .exceptionHandling()
                 .accessDeniedPage("/access-denied");

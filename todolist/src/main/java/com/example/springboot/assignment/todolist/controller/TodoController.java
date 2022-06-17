@@ -1,7 +1,10 @@
 package com.example.springboot.assignment.todolist.controller;
 
 import com.example.springboot.assignment.todolist.entity.TodoItem;
+import com.example.springboot.assignment.todolist.entity.TodoItemDto;
 import com.example.springboot.assignment.todolist.service.TodoService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,25 +14,20 @@ import java.util.List;
 @Controller
 @RequestMapping("/todolist")
 public class TodoController {
+    @Autowired
+    private ModelMapper modelMapper;
     private TodoService todoService;
+
     public TodoController(TodoService theTodoService) {
         todoService = theTodoService;
     }
-    @GetMapping("/showMyLoginPage")
-    public String showMyLoginPage(){
-        //return "plain-login";
-        return "fancy-login";
-    }
 
     // add mapping for "/list"
-
     @GetMapping("/list")
     public String listTodoItems(Model theModel) {
 
-        // get employees from db
         List<TodoItem> theTodos = todoService.findAll();
 
-        // add to the spring model
         theModel.addAttribute("todolist", theTodos);
 
         return "todolist/list-items";
@@ -71,10 +69,12 @@ public class TodoController {
     }
 
     @PostMapping("/save")
-    public String saveEmployee(@ModelAttribute("item") TodoItem theTodoitem) {
+    public String saveEmployee(@ModelAttribute("item") TodoItemDto theTodoitem) {
+        // convert DTO to entity
+        TodoItem theItem = modelMapper.map(theTodoitem, TodoItem.class);
 
         // save the employee
-        todoService.save(theTodoitem);
+        todoService.save(theItem);
 
         // use a redirect to prevent duplicate submissions
         return "redirect:/todolist/list";
@@ -85,7 +85,6 @@ public class TodoController {
         //delete the employee
         todoService.deleteById(theId);
 
-        //redirect to /employees/list
         return "redirect:/todolist/list";
     }
 

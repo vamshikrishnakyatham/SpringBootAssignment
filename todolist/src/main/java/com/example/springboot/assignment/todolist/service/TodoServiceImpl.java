@@ -30,7 +30,7 @@ public class TodoServiceImpl implements TodoService{
             theTodoitem=result.get();
         }
         else {
-            throw new RuntimeException("Didn`t find Todo Item id - "+theId);
+            throw new ItemNotFoundException("Didn`t find Todo Item id - "+theId);
         }
         return theTodoitem;
     }
