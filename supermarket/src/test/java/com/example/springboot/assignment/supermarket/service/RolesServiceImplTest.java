@@ -1,8 +1,9 @@
 package com.example.springboot.assignment.supermarket.service;
 
-import com.shop.supermarket.dto.RolesDTO;
-import com.shop.supermarket.entity.Roles;
-import com.shop.supermarket.repository.RolesRepository;
+import com.example.springboot.assignment.supermarket.supermarket.dto.RolesDTO;
+import com.example.springboot.assignment.supermarket.supermarket.entity.Roles;
+import com.example.springboot.assignment.supermarket.supermarket.repository.RolesRepository;
+import com.example.springboot.assignment.supermarket.supermarket.service.RolesService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

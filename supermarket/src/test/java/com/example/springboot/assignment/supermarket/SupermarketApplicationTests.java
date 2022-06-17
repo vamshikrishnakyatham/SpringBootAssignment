@@ -1,7 +1,7 @@
 package com.example.springboot.assignment.supermarket;
 
-import com.shop.supermarket.converter.ItemsConverter;
-import com.shop.supermarket.converter.UsersConverter;
+import com.example.springboot.assignment.supermarket.supermarket.converter.ItemsConverter;
+import com.example.springboot.assignment.supermarket.supermarket.converter.UsersConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

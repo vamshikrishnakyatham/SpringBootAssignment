@@ -1,12 +1,14 @@
 package com.example.springboot.assignment.supermarket.service;
 
-import com.shop.supermarket.converter.UsersConverter;
-import com.shop.supermarket.dto.UsersDTO;
-import com.shop.supermarket.entity.Items;
-import com.shop.supermarket.entity.Roles;
-import com.shop.supermarket.entity.Users;
-import com.shop.supermarket.repository.RolesRepository;
-import com.shop.supermarket.repository.UsersRepository;
+import com.example.springboot.assignment.supermarket.supermarket.converter.UsersConverter;
+import com.example.springboot.assignment.supermarket.supermarket.dto.UsersDTO;
+import com.example.springboot.assignment.supermarket.supermarket.entity.Items;
+import com.example.springboot.assignment.supermarket.supermarket.entity.Roles;
+import com.example.springboot.assignment.supermarket.supermarket.entity.Users;
+import com.example.springboot.assignment.supermarket.supermarket.repository.RolesRepository;
+import com.example.springboot.assignment.supermarket.supermarket.repository.UsersRepository;
+import com.example.springboot.assignment.supermarket.supermarket.service.RolesService;
+import com.example.springboot.assignment.supermarket.supermarket.service.UsersService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

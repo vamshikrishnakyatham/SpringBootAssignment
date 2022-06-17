@@ -1,6 +1,6 @@
 package com.example.springboot.assignment.supermarket;
 
-import com.shop.supermarket.controller.BasicController;
+import com.example.springboot.assignment.supermarket.supermarket.controller.BasicController;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;

@@ -1,11 +1,11 @@
 package com.example.springboot.assignment.supermarket;
 
-import com.shop.supermarket.controller.StaffDataController;
-import com.shop.supermarket.converter.ItemsConverter;
-import com.shop.supermarket.entity.Items;
-import com.shop.supermarket.repository.ItemsRepository;
-import com.shop.supermarket.service.ItemsService;
-import com.shop.supermarket.service.UsersService;
+import com.example.springboot.assignment.supermarket.supermarket.controller.StaffDataController;
+import com.example.springboot.assignment.supermarket.supermarket.converter.ItemsConverter;
+import com.example.springboot.assignment.supermarket.supermarket.entity.Items;
+import com.example.springboot.assignment.supermarket.supermarket.repository.ItemsRepository;
+import com.example.springboot.assignment.supermarket.supermarket.service.ItemsService;
+import com.example.springboot.assignment.supermarket.supermarket.service.UsersService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

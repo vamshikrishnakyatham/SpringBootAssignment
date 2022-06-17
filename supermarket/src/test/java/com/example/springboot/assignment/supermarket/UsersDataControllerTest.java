@@ -1,8 +1,8 @@
 package com.example.springboot.assignment.supermarket;
-import com.shop.supermarket.controller.UsersDataController;
-import com.shop.supermarket.converter.ItemsConverter;
-import com.shop.supermarket.converter.UsersConverter;
-import com.shop.supermarket.service.UsersService;
+import com.example.springboot.assignment.supermarket.supermarket.controller.UsersDataController;
+import com.example.springboot.assignment.supermarket.supermarket.converter.ItemsConverter;
+import com.example.springboot.assignment.supermarket.supermarket.converter.UsersConverter;
+import com.example.springboot.assignment.supermarket.supermarket.service.UsersService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
